@@ -1,3 +1,5 @@
 szkolenie git
 
 dodatkowe info
+
+3 commit

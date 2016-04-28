@@ -309,4 +309,208 @@ Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
 $ ^C
 
 Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        aaa.txt
+        script.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        aaa.txt
+        script.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        aaa.txt
+        script.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git add .
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   aaa.txt
+        new file:   script.txt
+        modified:   test.txt
+
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git commit -m "add 2 new files, 1 modyfied"
+[master 6c4c938] add 2 new files, 1 modyfied
+ 3 files changed, 315 insertions(+), 1 deletion(-)
+ create mode 100644 aaa.txt
+ create mode 100644 script.txt
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git log
+commit 6c4c93837dba66cfc8afad1ce2e5172106a60a5a
+Author: Mateusz Skocz <matius1@o2.pl>
+Date:   Thu Apr 28 16:30:13 2016 +0200
+
+    add 2 new files, 1 modyfied
+
+commit 0c3521d340738485dd406754d226cc546bed9d6e
+Author: matius1 <matius1@o2.pl>
+Date:   Thu Apr 28 16:18:25 2016 +0200
+
+    Add new file test
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git add .
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git commit -m
+error: switch `m' requires a value
+usage: git commit [<options>] [--] <pathspec>...
+
+    -q, --quiet           suppress summary after successful commit
+    -v, --verbose         show diff in commit message template
+
+Commit message options
+    -F, --file <file>     read message from file
+    --author <author>     override author for commit
+    --date <date>         override date for commit
+    -m, --message <message>
+                          commit message
+    -c, --reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --reuse-message <commit>
+                          reuse message from specified commit
+    --fixup <commit>      use autosquash formatted message to fixup specified commit
+    --squash <commit>     use autosquash formatted message to squash specified commit
+    --reset-author        the commit is authored by me now (used with -C/-c/--amend)
+    -s, --signoff         add Signed-off-by:
+    -t, --template <file>
+                          use specified template file
+    -e, --edit            force edit of commit
+    --cleanup <default>   how to strip spaces and #comments from message
+    --status              include status in commit message template
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --all             commit all changed files
+    -i, --include         add specified files to index for commit
+    --interactive         interactively add files
+    -p, --patch           interactively add changes
+    -o, --only            commit only specified files
+    -n, --no-verify       bypass pre-commit hook
+    --dry-run             show what would be committed
+    --short               show status concisely
+    --branch              show branch information
+    --porcelain           machine-readable output
+    --long                show status in long format (default)
+    -z, --null            terminate entries with NUL
+    --amend               amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    -u, --untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ '
+> git commit -m "3rd commit"
+>
+>
+>
+>
+>
+>
+>
+> '
+bash: $'\ngit commit -m "3rd commit"\n\n\n \n\n\n\n\n': command not found
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git commit -m "3rd commit"
+[master 3faf032] 3rd commit
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ teraz cofanie zmian
+bash: teraz: command not found
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git reset --soft HEAD~1
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   test.txt
+
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git stash
+Saved working directory and index state WIP on master: 6c4c938 add 2 new files, 1 modyfied
+HEAD is now at 6c4c938 add 2 new files, 1 modyfied
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git stash log
+usage: git stash list [<options>]
+   or: git stash show [<stash>]
+   or: git stash drop [-q|--quiet] [<stash>]
+   or: git stash ( pop | apply ) [--index] [-q|--quiet] [<stash>]
+   or: git stash branch <branchname> [<stash>]
+   or: git stash [save [--patch] [-k|--[no-]keep-index] [-q|--quiet]
+                       [-u|--include-untracked] [-a|--all] [<message>]]
+   or: git stash clear
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
+$ git stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (deb9450cba54fece8bcd6e4bac11e2109d36c553)
+
+Mati@DESKTOP-5V7B90M MINGW64 /D/GITUT (master)
 $
